@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Store from './components/Store'
+import Form from './components/Form'
+import Weather from './components/Weather'
+import ErrorBoundary from './components/ErrorBoundary'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   <ErrorBoundary>
+    <Store>
+      <Form></Form>
+      <Weather></Weather>
+    </Store>
+   </ErrorBoundary>
+  )
 }
 
-export default App;
+export default App
